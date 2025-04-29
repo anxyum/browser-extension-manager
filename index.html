@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <img class="logo" src="./assets/images/logo.svg" alt="logo" />
+      </header>
+      <div class="extensions-wrapper">
+        <div class="extensions-header">
+          <h1>Extensions List</h1>
+          <div class="filters-wrapper">
+            <label class="filter" for="radio-all">
+              <input
+                type="radio"
+                name="filter"
+                id="radio-all"
+                value="all"
+                checked
+              />
+              All
+            </label>
+            <label class="filter" for="radio-active">
+              <input
+                type="radio"
+                name="filter"
+                id="radio-active"
+                value="active"
+              />
+              Active
+            </label>
+            <label class="filter" for="radio-inactive">
+              <input
+                type="radio"
+                name="filter"
+                id="radio-inactive"
+                value="inactive"
+              />
+              Inactive
+            </label>
+          </div>
+        </div>
+        <ul class="extensions">
+          <li class="extension-wrapper">
+            <div class="extension-infos">
+              <img
+                class="extension-logo"
+                src="./assets/images/logo-console-plus.svg"
+                alt=""
+              />
+              <div class="extension-text-infos">
+                <p class="extension-name">DevLens</p>
+                <p class="extension-description">
+                  Quickly inspect page layouts and visualize element boundaries.
+                </p>
+              </div>
+            </div>
+            <div class="action-buttons">
+              <button class="extension-remove-btn">Remove</button>
+              <label class="toggle-switch">
+                <span></span>
+                <input type="checkbox" />
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

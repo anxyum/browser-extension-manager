@@ -1,0 +1,241 @@
+:root {
+  --default-border: 1px solid #d6e2f5;
+  --default-color: #091540;
+  --neutral-color: #fbfdfe;
+  --active-color: #c7231a;
+}
+
+body {
+  background: linear-gradient(180deg, #ebf2fc 0%, #eefbf9 100%);
+  min-height: 100vh;
+  padding: 16px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+header {
+  background-color: var(--neutral-color);
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: var(--default-border);
+  box-shadow: 0px 2px 3px 0px #d9e5f4;
+}
+
+.extensions-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.extensions-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+h1 {
+  margin: 0;
+  font-family: Noto Sans;
+  text-align: center;
+  color: var(--default-color);
+}
+
+.filters-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 12px;
+}
+
+.filter {
+  cursor: pointer;
+  border: var(--default-border);
+  padding: 8px 20px;
+  border-radius: 24px;
+  background-color: var(--neutral-color);
+  box-shadow: 0px 1px 2px 0px #b8c4d766;
+
+  font-family: Noto Sans;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--default-color);
+
+  input {
+    display: none;
+  }
+}
+
+.filter:hover {
+  opacity: 0.7;
+}
+
+.filter:has(input:checked) {
+  color: var(--neutral-color);
+  background-color: var(--active-color);
+  border: none;
+}
+
+.extensions {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 12px;
+}
+
+.extension-wrapper {
+  padding: 20px;
+  background-color: var(--neutral-color);
+  border-radius: 20px;
+  border: var(--default-border);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0px 1px 5px 1px #c2cee138;
+}
+
+.extension-infos {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.extension-text-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.extension-name {
+  font-family: Noto Sans;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: -0.2px;
+  color: var(--default-color);
+}
+
+.extension-description {
+  font-family: Noto Sans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.5px;
+  color: #535868;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.extension-remove-btn {
+  padding: 8px 16px;
+  background-color: var(--neutral-color);
+  border: var(--default-border);
+  border-radius: 24px;
+
+  font-family: Noto Sans;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.5px;
+  color: var(--default-color);
+  cursor: pointer;
+}
+
+.extension-remove-btn:hover {
+  background-color: var(--active-color);
+  color: var(--neutral-color);
+  border-color: var(--active-color);
+}
+
+.toggle-switch {
+  background-color: #c6c6c6;
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 12px;
+  position: relative;
+  width: 36px;
+  cursor: pointer;
+
+  input {
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  span {
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    position: relative;
+    transition: all 0.4s;
+  }
+
+  span::before {
+    position: absolute;
+    left: 0;
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    display: inline-block;
+    background-color: var(--neutral-color);
+    box-shadow: 0px 1px 2px -1px #0a0d124d;
+  }
+}
+
+.toggle-switch:hover {
+}
+
+.toggle-switch:has(input:checked) {
+  background-color: var(--active-color);
+
+  span {
+    left: 16px;
+  }
+}
+
+.toggle-switch:has(input:checked):hover {
+  background-color: #de4840;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    padding: 24px 32px;
+  }
+
+  .extensions-wrapper {
+    gap: 32px;
+  }
+
+  .extensions-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    padding: 40px;
+  }
+
+  main {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 64px;
+  }
+}
