@@ -57,7 +57,6 @@ function displayExtension(extension) {
 }
 
 function displayExtensions(extensions) {
-  console.log(extensions);
   $extensions.innerHTML = "";
   extensions.forEach((extension) => {
     displayExtension(extension);
